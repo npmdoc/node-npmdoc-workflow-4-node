@@ -1,6 +1,6 @@
 # npmdoc-workflow-4-node
 
-#### api documentation for  [workflow-4-node (v0.17.0)](https://github.com/unbornchikken/workflow-4-node)  [![npm package](https://img.shields.io/npm/v/npmdoc-workflow-4-node.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-workflow-4-node) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-workflow-4-node.svg)](https://travis-ci.org/npmdoc/node-npmdoc-workflow-4-node)
+#### basic api documentation for  [workflow-4-node (v0.17.0)](https://github.com/unbornchikken/workflow-4-node)  [![npm package](https://img.shields.io/npm/v/npmdoc-workflow-4-node.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-workflow-4-node) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-workflow-4-node.svg)](https://travis-ci.org/npmdoc/node-npmdoc-workflow-4-node)
 
 #### Workflow 4 Node is a .NET Workflow Foundation like framework for Node.js. The goal is to reach feature equivalence and beyond.
 
@@ -88,7 +88,8 @@
         "test": "mocha tests",
         "test-es5": "mocha tests --old"
     },
-    "version": "0.17.0"
+    "version": "0.17.0",
+    "bin": {}
 }
 ```
 
