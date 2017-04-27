@@ -6656,7 +6656,24 @@
         }
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/* forEach */
+Activity.prototype.all = regeneratorRuntime.mark(function _callee(execContext) {
+return regeneratorRuntime.wrap(function _callee$(_context) {
+    while (1) {
+        switch (_context.prev = _context.next) {
+            case 0:
+                return _context.delegateYield(this.<span class="apidocCodeKeywordSpan">_children</span>(true, null, execContext,
+null), &#x22;t0&#x22;, 1);
+
+            case 1:
+            case &#x22;end&#x22;:
+                return _context.stop();
+        }
+    }
+}, _callee, this);
+...</pre></li>
     </ul>
 
 
@@ -6696,7 +6713,24 @@
     }
     return self._scopeKeys;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        var first = true;
+        var src = &#x22;return {&#x22;;
+        var _iteratorNormalCompletion6 = true;
+        var _didIteratorError6 = false;
+        var _iteratorError6 = undefined;
+
+        try {
+            for (var _iterator6 = this.<span class="apidocCodeKeywordSpan">_getScopeKeys</span>()[Symbol.iterator](), _step6; !(
+_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+var _fieldName = _step6.value;
+
+if (first) {
+    first = false;
+} else {
+    src += &#x22;,\n&#x22;;
+}
+...</pre></li>
     </ul>
 
 
@@ -6714,7 +6748,23 @@
         this._structureInitialized = true;
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _context4.next = 58;
+    break;
+}
+
+visited.add(self);
+
+// Ensure it&#x27;s structure created:
+this.<span class="apidocCodeKeywordSpan">_initializeStructure</span>(execContext);
+
+if (!(self !== except)) {
+    _context4.next = 9;
+    break;
+}
+
+_context4.next = 9;
+...</pre></li>
     </ul>
 
 
@@ -6756,7 +6806,23 @@
             }
         });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (arguments.length &#x3e; 1) {
+    args = [];
+    for (var i = 1; i &#x3c; arguments.length; i++) {
+        args.push(arguments[i]);
+    }
+}
+
+this.<span class="apidocCodeKeywordSpan">_start</span>(callContext, null, args);
+};
+
+Activity.prototype._start = function (callContext, variables, args) {
+var self = this;
+
+if (_.isUndefined(args)) {
+    args = this.args || [];
+...</pre></li>
     </ul>
 
 
@@ -6771,7 +6837,25 @@
     <li>description and source-code<pre class="apidocCodePre">function* (execContext) {
     yield * this._children(true, null, execContext, null);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+    }
+    var _iteratorNormalCompletion7 = true;
+    var _didIteratorError7 = false;
+    var _iteratorError7 = undefined;
+
+    try {
+        for (var _iterator7 = workflow.<span class="apidocCodeKeywordSpan">all</span>(execContext)[Symbol.iterator](), _step7; !(
+_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+var activity = _step7.value;
+
+var alias = activityMarkup.getAlias(activity);
+assert(alias);
+add(alias);
+for (var key in activity) {
+    if (activity.hasOwnProperty(key) &#x26;&#x26; !activity.nonScopedProperties.has(key) &#x26;&#x26; !activity.nonSerializedProperties
+.has(key)) {
+...</pre></li>
     </ul>
 
 
@@ -6786,7 +6870,23 @@
     <li>description and source-code<pre class="apidocCodePre">cancel = function (callContext) {
     this.end(callContext, Activity.states.cancel);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Callbacks */
+
+CallContext.prototype.complete = function (result) {
+    this.activity.complete(this, result);
+};
+
+CallContext.prototype.cancel = function () {
+    this.activity.<span class="apidocCodeKeywordSpan">cancel</span>(this);
+};
+
+CallContext.prototype.idle = function () {
+    this.activity.idle(this);
+};
+
+CallContext.prototype.fail = function (e) {
+...</pre></li>
     </ul>
 
 
@@ -6801,7 +6901,24 @@
     <li>description and source-code<pre class="apidocCodePre">function* (execContext) {
     yield * this._children(true, this, execContext, null);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+self._nodes.delete(node.instanceId);
+var _iteratorNormalCompletion10 = true;
+var _didIteratorError10 = false;
+var _iteratorError10 = undefined;
+
+try {
+    for (var _iterator10 = node.<span class="apidocCodeKeywordSpan">children</span>()[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10
+ = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+        var c = _step10.value;
+
+        self._removeAllNodes(c);
+    }
+} catch (err) {
+    _didIteratorError10 = true;
+    _iteratorError10 = err;
+...</pre></li>
     </ul>
 
 
@@ -6854,7 +6971,23 @@
     }
     return newInst;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Activity.prototype.initializeStructure = _.noop;
+
+Activity.prototype.clone = function () {
+    function makeClone(value, canCloneArrays) {
+        if (value instanceof Activity) {
+return value.<span class="apidocCodeKeywordSpan">clone</span>();
+        } else if (value instanceof Set) {
+var newSet = new Set();
+var _iteratorNormalCompletion2 = true;
+var _didIteratorError2 = false;
+var _iteratorError2 = undefined;
+
+try {
+...</pre></li>
     </ul>
 
 
@@ -6869,7 +7002,23 @@
     <li>description and source-code<pre class="apidocCodePre">complete = function (callContext, result) {
     this.end(callContext, Activity.states.complete, result);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Activity.prototype.initializeExec = _.noop;
+
+Activity.prototype.unInitializeExec = _.noop;
+
+Activity.prototype.run = function (callContext, args) {
+    callContext.activity.<span class="apidocCodeKeywordSpan">complete</span>(callContext, args);
+};
+
+Activity.prototype.complete = function (callContext, result) {
+    this.end(callContext, Activity.states.complete, result);
+};
+
+Activity.prototype.cancel = function (callContext) {
+...</pre></li>
     </ul>
 
 
@@ -6911,7 +7060,24 @@
 
     return this._createScopePartImpl(this, _);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            return this._scope || (this._scope = this._scopeTree.find(this.instanceId));
+        }
+    }
+});
+
+CallContext.prototype.next = function (childActivityOrActivityId, variables) {
+    var child = this._asActivity(childActivityOrActivityId);
+    var part = child.<span class="apidocCodeKeywordSpan">createScopePart</span>();
+    if (_.isObject(variables)) {
+        _.extend(part, variables);
+    }
+    return new CallContext(this._executionContext, child, this._scopeTree.next(this.instanceId, child.instanceId, part, child.id
+));
+};
+
+CallContext.prototype.back = function (keepScope) {
+...</pre></li>
     </ul>
 
 
@@ -6978,7 +7144,23 @@
     }
     state.emitState(result, savedScope);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Activity.prototype.unInitializeExec = _.noop;
+
+Activity.prototype.run = function (callContext, args) {
+    callContext.activity.complete(callContext, args);
+};
+
+Activity.prototype.complete = function (callContext, result) {
+    this.<span class="apidocCodeKeywordSpan">end</span>(callContext, Activity.states.complete, result);
+};
+
+Activity.prototype.cancel = function (callContext) {
+    this.end(callContext, Activity.states.cancel);
+};
+
+Activity.prototype.idle = function (callContext) {
+...</pre></li>
     </ul>
 
 
@@ -6993,7 +7175,23 @@
     <li>description and source-code<pre class="apidocCodePre">fail = function (callContext, e) {
     this.end(callContext, Activity.states.fail, e);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // We should allow IO operations to execute:
+    setImmediate(function () {
+        state.reportState(Activity.states.run, null, myCallContext.scope);
+        try {
+            self.initializeExec.call(myCallContext.scope);
+            self.run.call(myCallContext.scope, myCallContext, args);
+        } catch (e) {
+            self.<span class="apidocCodeKeywordSpan">fail</span>(myCallContext, e);
+        }
+    });
+};
+
+Activity.prototype.initializeExec = _.noop;
+
+Activity.prototype.unInitializeExec = _.noop;
+...</pre></li>
     </ul>
 
 
@@ -7008,7 +7206,24 @@
     <li>description and source-code<pre class="apidocCodePre">idle = function (callContext) {
     this.end(callContext, Activity.states.idle);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+BeginMethod.prototype.run = function (callContext, args) {
+    var methodName = this.methodName;
+    if (_.isString(methodName)) {
+        var mn = methodName.trim();
+        if (mn) {
+            callContext.createBookmark(specStrings.hosting.createBeginMethodBMName(mn), &#x22;_methodInvoked&#x22;);
+            callContext.<span class="apidocCodeKeywordSpan">idle</span>();
+            return;
+        }
+    }
+    callContext.fail(new errors.ValidationError(&#x22;BeginMethod activity methodName property&#x27;s value &#x27;&#x22; + methodName
+ + &#x22;&#x27; must be a valid identifier.&#x22;));
+};
+
+BeginMethod.prototype._methodInvoked = function (callContext, reason, result) {
+...</pre></li>
     </ul>
 
 
@@ -7023,7 +7238,24 @@
     <li>description and source-code<pre class="apidocCodePre">function* (execContext) {
     yield * this._children(false, this, execContext);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this._knownActivities.set(activityId, activity);
+
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+    for (var _iterator = activity.<span class="apidocCodeKeywordSpan">immediateChildren</span>(this)[Symbol.iterator](), _step; !(
+_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var child = _step.value;
+
+        this._initialize(activity, child, idCounter);
+        state.childInstanceIds.add(child.instanceId);
+    }
+} catch (err) {
+    _didIteratorError = true;
+...</pre></li>
     </ul>
 
 
@@ -7053,7 +7285,23 @@
     <li>description and source-code<pre class="apidocCodePre">function noop() {
   // No operation performed.
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Structure */
+Activity.prototype.isArrayProperty = function (propName) {
+    return this.arrayProperties.has(propName);
+};
+
+Activity.prototype._initializeStructure = function (execContext) {
+    if (!this._structureInitialized) {
+        this.<span class="apidocCodeKeywordSpan">initializeStructure</span>(execContext);
+        this._structureInitialized = true;
+    }
+};
+
+Activity.prototype.initializeStructure = _.noop;
+
+Activity.prototype.clone = function () {
+...</pre></li>
     </ul>
 
 
@@ -7068,7 +7316,23 @@
     <li>description and source-code<pre class="apidocCodePre">isArrayProperty = function (propName) {
     return this.arrayProperties.has(propName);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+    }
+} else if (_.isObject(pars)) {
+    var to = null;
+    // values
+    for (var fieldName in pars) {
+        if (pars.hasOwnProperty(fieldName)) {
+            if (activity.<span class="apidocCodeKeywordSpan">isArrayProperty</span>(fieldName)) {
+                var v = self._createValue(types, pars[fieldName], true, is.template(activity));
+                if (!_.isArray(v)) {
+                    v = [v];
+                }
+                activity[fieldName] = v;
+            } else if (fieldName === &#x22;@to&#x22;) {
+                if (to) {
+...</pre></li>
     </ul>
 
 
@@ -7304,7 +7568,23 @@
         debug(&#x22;%s: Runtime error happened: %s&#x22;, selfId, e.stack);
         if (bookmarkNames.length) {
             de ...</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.isTrue = true;
+this.isFalse = false;
+}
+
+util.inherits(And, Activity);
+
+And.prototype.run = function (callContext, args) {
+callContext.<span class="apidocCodeKeywordSpan">schedule</span>(args, &#x22;_argsGot&#x22;);
+};
+
+And.prototype._argsGot = function (callContext, reason, result) {
+if (reason !== Activity.states.complete) {
+    callContext.end(reason, result);
+    return;
+}
+...</pre></li>
     </ul>
 
 
@@ -7331,7 +7611,23 @@
 
     this._start(callContext, null, args);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            this._wakeUp = new WakeUp(this._knownRunningInstances, this._persistence, this._options.wakeUpOptions);
+            this._wakeUp.on(&#x22;continue&#x22;, function (i) {
+                self._continueWokeUpInstance(i);
+            });
+            this._wakeUp.on(&#x22;error&#x22;, function (e) {
+                self.onWarn(e);
+            });
+            this._wakeUp.<span class="apidocCodeKeywordSpan">start</span>();
+        }
+
+        this._isInitialized = true;
+    }
+};
+
+WorkflowHost.prototype.stop = async(regeneratorRuntime.mark(function _callee(workflowName, instanceId) {
+...</pre></li>
     </ul>
 
 
@@ -7346,7 +7642,23 @@
     <li>description and source-code<pre class="apidocCodePre">toString = function () {
     return (this.displayName ? (this.displayName + &#x22; &#x22;) : &#x22;&#x22;) + &#x22;(&#x22; + this.constructor.name + &#x22;:&#x22; + this.id + &#x22;)&#x22;;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (!this.rootActivity) {
+    throw new Error(&#x22;Context is not initialized.&#x22;);
+}
+};
+
+ActivityExecutionContext.prototype._initialize = function (parent, activity, idCounter) {
+var activityId = activity._instanceId;
+var nextId = (idCounter.instanceId++).<span class="apidocCodeKeywordSpan">toString</span>();
+if (!activityId) {
+    activityId = nextId;
+    activity.instanceId = activityId;
+} else if (activityId !== nextId) {
+    throw new errors.ActivityRuntimeError(&#x22;Activity &#x22; + activity + &#x22; has been assigned to an other position.&#x22
+;);
+}
+...</pre></li>
     </ul>
 
 
@@ -7462,7 +7774,23 @@
         }
     );
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        this._isInitialized = false;
+    } else {
+        throw new TypeError(&#x22;Argument &#x27;contextOrActivity&#x27; is not an activity, context or a markup.&#x22;);
+    }
+
+    this._rootState = null;
+    this._trackers = [];
+    this.<span class="apidocCodeKeywordSpan">_hookContext</span>();
+    this.updatedOn = null;
+    this.instance = instance || null;
+}
+
+util.inherits(ActivityExecutionEngine, EventEmitter);
+
+Object.defineProperties(ActivityExecutionEngine.prototype, {
+...</pre></li>
     </ul>
 
 
@@ -7480,7 +7808,23 @@
         this._isInitialized = true;
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        throw new Error(&#x22;Context is already initialized.&#x22;);
+    }
+    if (!is.activity(rootActivity)) {
+        throw new TypeError(&#x22;Argument &#x27;rootActivity&#x27; value is not an activity.&#x22;);
+    }
+
+    this.rootActivity = rootActivity;
+    this.<span class="apidocCodeKeywordSpan">_initialize</span>(null, rootActivity, { instanceId: 0 });
+};
+
+ActivityExecutionContext.prototype._checkInit = function () {
+    if (!this.rootActivity) {
+        throw new Error(&#x22;Context is not initialized.&#x22;);
+    }
+};
+...</pre></li>
     </ul>
 
 
@@ -7523,7 +7867,23 @@
             });
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+}
+
+args.unshift(new CallContext(self.context));
+
+return new Bluebird(function (resolve, reject) {
+    try {
+        self.<span class="apidocCodeKeywordSpan">_setRootState</span>(self.context.getExecutionState(self.rootActivity));
+        self.once(Activity.states.end, function (eArgs) {
+            var reason = eArgs.reason;
+            var result = eArgs.result;
+            switch (reason) {
+                case Activity.states.complete:
+                    resolve(result);
+                    break;
+...</pre></li>
     </ul>
 
 
@@ -7540,7 +7900,23 @@
         throw new errors.ActivityStateExceptionError(&#x22;Workflow has been already started.&#x22;);
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        a,
+        _args = arguments;
+
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+            switch (_context.prev = _context.next) {
+                case 0:
+this.<span class="apidocCodeKeywordSpan">_verifyNotStarted</span>();
+
+this._initialize();
+
+args = [new CallContext(this.context)];
+_iteratorNormalCompletion3 = true;
+_didIteratorError3 = false;
+_iteratorError3 = undefined;
+...</pre></li>
     </ul>
 
 
@@ -7558,7 +7934,24 @@
     }
     this._trackers.push(new ActivityStateTracker(tracker));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var _didIteratorError4 = false;
+var _iteratorError4 = undefined;
+
+try {
+    for (var _iterator4 = this._instances.values()[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4
+.next()).done); _iteratorNormalCompletion4 = true) {
+        var insta = _step4.value;
+
+        insta.<span class="apidocCodeKeywordSpan">addTracker</span>(tracker);
+    }
+} catch (err) {
+    _didIteratorError4 = true;
+    _iteratorError4 = err;
+} finally {
+    try {
+        if (!_iteratorNormalCompletion4 &#x26;&#x26; _iterator4.return) {
+...</pre></li>
     </ul>
 
 
@@ -7578,7 +7971,23 @@
     this._initialize();
     return this.context.getStateAndPromotions(serializer, enablePromotions);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* SERIALIZATION */
+ActivityExecutionEngine.prototype.getStateAndPromotions = function (serializer, enablePromotions) {
+if (serializer &#x26;&#x26; !_.isObject(serializer)) {
+    throw new Error(&#x22;Argument &#x27;serializer&#x27; is not an object.&#x22;);
+}
+
+this._initialize();
+return this.context.<span class="apidocCodeKeywordSpan">getStateAndPromotions</span>(serializer, enablePromotions);
+};
+
+ActivityExecutionEngine.prototype.setState = function (serializer, json) {
+if (serializer &#x26;&#x26; !_.isObject(serializer)) {
+    throw new Error(&#x22;Argument &#x27;serializer&#x27; is not an object.&#x22;);
+}
+if (!_.isObject(json)) {
+...</pre></li>
     </ul>
 
 
@@ -7635,7 +8044,23 @@
         }
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+self.createdOn = new Date();
+
+_context2.prev = 7;
+_context2.t0 = self._engine;
+_context2.next = 11;
+return self._engine.<span class="apidocCodeKeywordSpan">invoke</span>();
+
+                case 11:
+_context2.t1 = _context2.sent;
+
+if (!_context2.t0.isIdle.call(_context2.t0, _context2.t1)) {
+    _context2.next = 23;
+    break;
+...</pre></li>
     </ul>
 
 
@@ -7650,7 +8075,107 @@
     <li>description and source-code<pre class="apidocCodePre">isIdle = function (result) {
     return result === this._idle;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+
+{&#x22;version&#x22;:3,&#x22;sources&#x22;:[&#x22;hosting/workflowInstance.js&#x22;],&#x22;names&#x22;:[],&#x22;mappings&#x22;:&#
+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&#x22;,&#x22;file&#x22;:&#x22;hosting/workflowInstance.js&#x22;,&#x22;sourcesContent
+&#x22;:[&#x22;\&#x22;use strict\&#x22;;\n\nlet Workflow = require(\&#x22;../activities/workflow\&#x22;);\nlet ActivityExecutionContext = require(\&#x22;../activities/activityExecutionContext\&#x22;);\nlet ActivityExecutionEngine = require(\&#x22;../activities/activityExecutionEngine\&#x22;);\nlet BeginMethod = require(\&#x22;../activities/beginMethod\&#x22;);\nlet EndMethod = require(\&#x22;../activities/endMethod\&#x22;);\nlet errors = require(\&#x22;../common/errors\&#x22;);\nlet enums = require(\&#x22;../common/enums\&#x22;);\nlet specStrings = require(\&#x22;../common/specStrings\&#x22;);\nlet _ = require(\&#x22;lodash\&#x22;);\nlet constants = require(\&#x22;../common/constants\&#x22;);\nlet Bluebird = require(\&#x22;bluebird\&#x22;);\nlet is = require(\&#x22;../common/is\&#x22;);\nlet asyncHelpers = require(\&#x22;../common/asyncHelpers\&#x22;);\nlet async = asyncHelpers.async;\nlet EventEmitter = require(&#x27;events&#x27;).EventEmitter;\nlet util = require(\&#x22;util\&#x22;);\nlet debug = require(\&#x22;debug\&#x22;)(\&#x22;wf4node:WorkflowInstance\&#x22;);\n\nfunction WorkflowInstance(host) {\n    EventEmitter.call(this);\n\n    this._host = host;\n    this.id = null;\n    this._engine = null;\n    this.createdOn = null;\n    this._beginMethodWithCreateInstCallback = null;\n    this._endMethodCallback = null;\n    this._idleInstanceIdPathCallback = null;\n    this.activeDelays = [];\n    this.workflowVersion = null;\n}\n\nutil.inherits(WorkflowInstance, EventEmitter);\n\nObject.defineProperties(\n    WorkflowInstance.prototype, {\n        execState: {\n            get: function () {\n                return this._engine ? this._engine.execState : null;\n            }\n        },\n        workflowName: {\n            get: function () {\n                return this._engine ? this._engine.rootActivity.name.trim() : null;\n            }\n        },\n        updatedOn: {\n            get: function () {\n                return this._engine ? this._engine.updatedOn : null;\n            }\n        },\n        persistence: {\n            get: function() {\n                return this._host._persistence;\n            }\n        }\n    });\n\nWorkflowInstance.prototype.create = async(function* (execContext, workflowVersion, methodName, args, lockInfo) {\n    let self = this;\n\n    self.setWorkflow(execContext, workflowVersion);\n    self._resetCallbacksAndState();\n\n    let createMethodReached = false;\n    let instanceIdPath = null;\n    self._beginMethodWithCreateInstCallback = function (mn, ip) {\n        if (mn === methodName) {\n            createMethodReached = true;\n            instanceIdPath = ip;\n        }\n    };\n\n    self.createdOn = new Date();\n\n    try {\n        if (self._engine.<span class="apidocCodeKeywordSpan">isIdle</span>(yield self._engine.invoke())) {\n            if (createMethodReached) {\n                self._resetCallbacksAndState();\n\n                if (instanceIdPath) {\n                    if (_.isUndefined(self.id = self._host._instanceIdParser.parse(instanceIdPath, args))) {\n                        throw new errors.WorkflowError(\&#x22;Cannot parse BeginMethod&#x27;s instanceIdPath &#x27;\&#x22; + instanceIdPath + \&#x22;&#x27; on arguments of method &#x27;\&#x22; + methodName + \&#x22;&#x27;.\&#x22;);\n                    }\n                    yield (self._enterLockForCreatedInstance(lockInfo));\n                }\n\n                let createEndMethodReached = false;\n                let result;\n                let endInstanceIdPath = null;\n                self._endMethodCallback =\n                    function (mn, ip, r) {\n                        if (mn === methodName) {\n                            createEndMethodReached = true;\n                            endInstanceIdPath = ip;\n                            result = r;\n                        }\n                    };\n\n                let idleMethods = [];\n                self._idleInstanceIdPathCallback =\n                    function (mn, ip) {\n                        idleMethods.push(\n                            {\n                                methodName: mn,\n                                instanceIdPath: ip\n                            });\n                    };\n\n                yield (self._engine.resumeBookmark(specStrings.hosting.createBeginMethodBMName(methodName), enums.activityStates.complete, args));\n\n                if (createEndMethodReached) {\n                    if (_.isUndefined(self.id)) {\n                        if (endInstanceIdPath) {\n                            if (_.isUndefined(self.id = self._host._instanceIdParser.parse(endInstanceIdPath, result))) {\n                                throw new errors.WorkflowError(\&#x22;Cannot parse EndMethods&#x27;s instanceIdPath &#x27;\&#x22; + instanceIdPath + \&#x22;&#x27; on arguments of method &#x27;\&#x22; + methodName + \&#x22;&#x27;.\&#x22;);\n                            }\n                            yield self._enterLockForCreatedInstance(lockInfo);\n                        }\n                        else {\n                            throw new errors.WorkflowError(\&#x22;BeginMethod or EndMethod of method &#x27;\&#x22; + methodName + \&#x22;&#x27; doesn&#x27;t specify an instanceIdPath property value.\&#x22;);\n                        }\n                    }\n                }\n                else {\n                    throw new errors.WorkflowError(\&#x22;Workflow has been completed or gone to idle without reaching an EndMethod activity of method &#x27;\&#x22; + methodName + \&#x22;&#x27;.\&#x22;);\n                }\n\n                if (self.execState === enums.activityStates.idle) {\n                    if (idleMethods.length === 0) {\n                        throw new errors.WorkflowError(\&#x22;Workflow has gone to idle, but there is no active BeginMethod activities to wait for.\&#x22;);\n                    }\n                }\n                else {\n                    if (idleMethods.length !== 0) {\n                        throw new errors.WorkflowError(\&#x22;Workflow has completed, but there is active BeginMethod activities to wait for.\&#x22;);\n                    }\n                }\n\n                return result;\n            }\n            else {\n                throw new errors.WorkflowError(\&#x22;Workflow has gone to idle without reaching an instance creator BeginMethod activity of method &#x27;\&#x22; + methodName + \&#x22;&#x27;.\&#x22;);\n            }\n        }\n        else {\n            throw new errors.WorkflowError(\&#x22;Workflow has been completed without reaching an instance creator BeginMethod activity.\&#x22;);\n        }\n    }\n    catch (e) {\n        debug(\&#x22;Create error: %s\&#x22;, e.stack);\n        if (e instanceof errors.TimeoutError) {\n            throw new errors.MethodIsNotAccessibleError(\&#x22;Cannot create instanceof workflow &#x27;\&#x22; + self.workflowName + \&#x22;&#x27;, because &#x27;\&#x22; + methodName + \&#x22;&#x27; is locked.\&#x22;);\n        }\n        if (e instanceof errors.BookmarkNotFoundError) {\n            throw new errors.MethodIsNotAccessibleError(\&#x22;Cannot create instanceof workflow &#x27;\&#x22; + self.workflowName + \&#x22;&#x27;, because bookmark of &#x27;\&#x22; + methodName + \&#x22;&#x27; doesn&#x27;t exist.\&#x22;);\n        }\n        throw e;\n    }\n    finally {\n        self._resetCallbacks();\n    }\n});\n\nWorkflowInstance.prototype._enterLockForCreatedInstance = async(\n    function* (lockInfo) {\n        if (lockInfo) {\n            yield this._host._enterLockForCreatedInstance(this, lockInfo);\n        }\n    });\n\nWorkflowInstance.prototype.setWorkflow = function (execContext, workflowVersion, instanceId) {\n    let self = this;\n    if (!(execContext instanceof ActivityExecutionContext)) {\n        throw new TypeError(\&#x22;Workflow argument expected.\&#x22;);\n    }\n    if (!(_.isString(workflowVersion)) || !workflowVersion) {\n        throw new TypeError(\&#x22;Workflow version expected.\&#x22;);\n    }\n    this.workflowVersion = workflowVersion;\n    this._engine = new ActivityExecutionEngine(execContext, this);\n    this._engine.on(\n        enums.events.workflowEvent,\n        function (args) {\n            let arr = _.toArray(args);\n            arr.splice(0, 0, self.instanceId);\n            self.emit(enums.events.workflowEvent, args);\n        });\n    this._addMyTrackers();\n    if (!_.isUndefined(instanceId)) {\n        this.id = instanceId;\n    }\n    this._copyParsFromHost();\n};\n\nWorkflowInstance.prototype.callMethod = async(function* (methodName, args) {\n    let self = this;\n\n    self._resetCallbacksAndState();\n\n    let endMethodReached = false;\n    let result = null;\n    self._endMethodCallback =\n        function (mn, ip, r) {\n            if (mn === methodName) {\n                endMethodReached = true;\n                result = r;\n            }\n        };\n\n    let idleMethods = [];\n    self._idleInstanceIdPathCallback =\n        function (mn, ip) {\n            idleMethods.push(\n                {\n                    methodName: mn,\n                    instanceIdPath: ip\n                });\n        };\n\n    try {\n        yield self._engine.resumeBookmark(specStrings.hosting.createBeginMethodBMName(methodName), enums.activityStates.complete, args);\n\n        if (!endMethodReached) {\n            throw new errors.WorkflowError(\&#x22;Workflow has been completed or gone to idle without reaching an EndMethod activity of method name &#x27;\&#x22; + methodName + \&#x22;&#x27;.\&#x22;);\n        }\n\n        if (self.execState === enums.activityStates.idle) {\n            if (idleMethods.length === 0) {\n                throw new errors.WorkflowError(\&#x22;Workflow has gone to idle, but there is no active BeginMethod activities to wait for.\&#x22;);\n            }\n        }\n        else {\n            if (idleMethods.length !== 0) {\n                throw new errors.WorkflowError(\&#x22;Workflow has completed, but there is active BeginMethod activities to wait for.\&#x22;);\n            }\n        }\n\n        return result;\n    }\n    catch (e) {\n        debug(\&#x22;Call method error: %s\&#x22;, e.stack);\n        if (e instanceof errors.BookmarkNotFoundError) {\n            throw new errors.MethodIsNotAccessibleError(\&#x22;Cannot call method &#x27;\&#x22; + methodName + \&#x22;&#x27; of workflow &#x27;\&#x22; + self.workflowName + \&#x22;&#x27;, because its bookmark doesn&#x27;t exist.\&#x22;);\n        }\n        throw e;\n    }\n    finally {\n        self._resetCallbacks();\n    }\n});\n\nWorkflowInstance.prototype._copyParsFromHost = function () {\n    for (let t of this._host._trackers) {\n        this._engine.addTracker(t);\n    }\n};\n\nWorkflowInstance.prototype._addMyTrackers = function () {\n    this._addBeginMethodWithCreateInstHelperTracker();\n    this._addEndMethodHelperTracker();\n    this._addIdleInstanceIdPathTracker();\n};\n\nWorkflowInstance.prototype._resetCallbacks = function () {\n    this._beginMethodWithCreateInstCallback = null;\n    this._endMethodCallback = null;\n    this._idleInstanceIdPathCallback = null;\n};\n\nWorkflowInstance.prototype._resetCallbacksAndState = function () {\n    this._resetCallbacks();\n    this.activeDelays = [];\n};\n\nWorkflowInstance.prototype._addBeginMethodWithCreateInstHelperTracker = function () {\n    let self = this;\n    let tracker = {\n        activityStateFilter: function (args) {\n            return self._beginMethodWithCreateInstCallback &#x26;&#x26;\n                args.scope.$activity instanceof BeginMethod &#x26;&#x26;\n                args.scope.canCreateInstance &#x26;&#x26;\n                _.isString(args.scope.methodName) &#x26;&#x26;\n                (!args.scope.instanceIdPath || _.isString(args.scope.instanceIdPath)) &#x26;&#x26;\n                args.reason === enums.activityStates.idle;\n        },\n        activityStateChanged: function (args) {\n            let methodName = args.scope.methodName.trim();\n            let instanceIdPath = args.scope.instanceIdPath ? args.scope.instanceIdPath.trim() : null;\n            self._beginMethodWithCreateInstCallback(methodName, instanceIdPath);\n        }\n    };\n    self._engine.addTracker(tracker);\n};\n\nWorkflowInstance.prototype._addEndMethodHelperTracker = function () {\n    let self = this;\n    let tracker = {\n        activityStateFilter: function (args) {\n            return self._endMethodCallback &#x26;&#x26;\n                args.scope.$activity instanceof EndMethod &#x26;&#x26;\n                _.isString(args.scope.methodName) &#x26;&#x26;\n                (!args.scope.instanceIdPath || _.isString(args.scope.instanceIdPath)) &#x26;&#x26;\n                args.reason === enums.activityStates.complete;\n        },\n        activityStateChanged: function (args) {\n            let methodName = args.scope.methodName.trim();\n            let instanceIdPath = args.scope.instanceIdPath ? args.scope.instanceIdPath.trim() : null;\n            self._endMethodCallback(methodName, instanceIdPath, args.result);\n        }\n    };\n    self._engine.addTracker(tracker);\n};\n\nWorkflowInstance.prototype._addIdleInstanceIdPathTracker = function () {\n    let self = this;\n    let tracker = {\n        activityStateFilter: function (args) {\n            return self._idleInstanceIdPathCallback &#x26;&#x26;\n                args.scope.$activity instanceof BeginMethod &#x26;&#x26;\n                _.isString(args.scope.methodName) &#x26;&#x26;\n                _.isString(args.scope.instanceIdPath) &#x26;&#x26;\n                args.reason === enums.activityStates.idle;\n        },\n        activityStateChanged: function (args) {\n            let methodName = args.scope.methodName.trim();\n            let instanceIdPath = args.scope.instanceIdPath.trim();\n            self._idleInstanceIdPathCallback(methodName, instanceIdPath);\n\n            // This is where a method goes idle.\n            // So if it a DelayTo method, we should remember that.\n            if (specStrings.hosting.isDelayToMethodName(methodName)) {\n                self.activeDelays.push({\n                    methodName: methodName,\n                    delayTo: args.scope.delayTo\n                });\n            }\n        }\n    };\n    self._engine.addTracker(tracker);\n};\n\nWorkflowInstance.prototype.getStateToPersist = function () {\n    let sp = this._engine.getStateAndPromotions(this._host.options.serializer, this._host.options.enablePromotions);\n    return {\n        instanceId: this.id,\n        createdOn: this.createdOn,\n        workflowName: this.workflowName,\n        workflowVersion: this.workflowVersion,\n        updatedOn: this._engine.updatedOn,\n        state: sp.state,\n        promotedProperties: sp.promotedProperties,\n        activeDelays: this.activeDelays\n    };\n};\n\nWorkflowInstance.prototype.restoreState = function (json) {\n    if (!_.isObject(json)) {\n        throw new TypeError(\&#x22;Argument &#x27;json&#x27; is not an object.\&#x22;);\n    }\n    if (json.instanceId !== this.id) {\n        throw new Error(\&#x22;State instanceId property value of &#x27;\&#x22; + json.instanceId + \&#x22;&#x27; is different than the current instance id &#x27;\&#x22; + this.id + \&#x22;&#x27;.\&#x22;);\n    }\n    if (json.workflowName !== this.workflowName) {\n        throw new Error(\&#x22;State workflowName property value of &#x27;\&#x22; + json.workflowName + \&#x22;&#x27; is different than the current Workflow name &#x27;\&#x22; + this.workflowName + \&#x22;&#x27;.\&#x22;);\n    }\n    if (json.workflowVersion !== this.workflowVersion) {\n        throw new Error(\&#x22;State workflowVersion property value of &#x27;\&#x22; + json.workflowVersion + \&#x22;&#x27; is different than the current Workflow version &#x27;\&#x22; + this.workflowVersion + \&#x22;&#x27;.\&#x22;);\n    }\n    if (!_.isDate(json.createdOn)) {\n        throw new Error(\&#x22;State createdOn property value of &#x27;\&#x22; + json.createdOn + \&#x22;&#x27; is not a Date.\&#x22;);\n    }\n\n    this.createdOn = json.createdOn;\n    this._engine.setState(this._host.options.serializer, json.state);\n};\n\nWorkflowInstance.prototype.addTracker = function(tracker) {\n    this._engine.addTracker(tracker);\n};\n\nmodule.exports = WorkflowInstance;\n&#x22;],&#x22;sourceRoot&#x22;:&#x22;/source/&#x22;}
+...</pre></li>
     </ul>
 
 
@@ -7741,7 +8266,23 @@ reached.&#x22;));
         }
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+if (ResumeBookmark.validReasons.indexOf(reason) === -1) {
+    callContext.fail(new errors.ValidationError(&#x22;Reason value &#x27;&#x22; + reason + &#x22;&#x27; is not valid.&#x22;));
+}
+
+var result = false;
+if (this.mustExists) {
+    callContext.<span class="apidocCodeKeywordSpan">resumeBookmark</span>(bookmarkName, reason, args);
+    result = true;
+} else {
+    if (callContext.executionContext.isBookmarkExists(bookmarkName)) {
+        callContext.resumeBookmark(bookmarkName, reason, args);
+        result = true;
+    }
+}
+...</pre></li>
     </ul>
 
 
@@ -7765,7 +8306,21 @@ reached.&#x22;));
     this.updatedOn = new Date();
     this.context.setState(serializer, json);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            if (_didIteratorError7) {
+                throw _iteratorError7;
+            }
+        }
+    }
+
+    this._bookmarks = json.bookmarks;
+    this._scopeTree.<span class="apidocCodeKeywordSpan">setState</span>(json.scope, serializer);
+};
+/* SERIALIZATION */
+
+module.exports = ActivityExecutionContext;
+//# sourceMappingURL=activityExecutionContext.js.map
+...</pre></li>
     </ul>
 
 
@@ -7786,7 +8341,23 @@ reached.&#x22;));
     spawn._promiseFulfilled(undefined);
     return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            this._wakeUp = new WakeUp(this._knownRunningInstances, this._persistence, this._options.wakeUpOptions);
+            this._wakeUp.on(&#x22;continue&#x22;, function (i) {
+                self._continueWokeUpInstance(i);
+            });
+            this._wakeUp.on(&#x22;error&#x22;, function (e) {
+                self.onWarn(e);
+            });
+            this._wakeUp.<span class="apidocCodeKeywordSpan">start</span>();
+        }
+
+        this._isInitialized = true;
+    }
+};
+
+WorkflowHost.prototype.stop = async(regeneratorRuntime.mark(function _callee(workflowName, instanceId) {
+...</pre></li>
     </ul>
 
 
@@ -7808,7 +8379,23 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">toString = function () {
     return enums.activityStates.idle;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (!this.rootActivity) {
+    throw new Error(&#x22;Context is not initialized.&#x22;);
+}
+};
+
+ActivityExecutionContext.prototype._initialize = function (parent, activity, idCounter) {
+var activityId = activity._instanceId;
+var nextId = (idCounter.instanceId++).<span class="apidocCodeKeywordSpan">toString</span>();
+if (!activityId) {
+    activityId = nextId;
+    activity.instanceId = activityId;
+} else if (activityId !== nextId) {
+    throw new errors.ActivityRuntimeError(&#x22;Activity &#x22; + activity + &#x22; has been assigned to an other position.&#x22
+;);
+}
+...</pre></li>
     </ul>
 
 
@@ -8543,7 +9130,23 @@ reached.&#x22;));
         this.cancelled.args = prev;
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Structure */
+Activity.prototype.isArrayProperty = function (propName) {
+    return this.arrayProperties.has(propName);
+};
+
+Activity.prototype._initializeStructure = function (execContext) {
+    if (!this._structureInitialized) {
+        this.<span class="apidocCodeKeywordSpan">initializeStructure</span>(execContext);
+        this._structureInitialized = true;
+    }
+};
+
+Activity.prototype.initializeStructure = _.noop;
+
+Activity.prototype.clone = function () {
+...</pre></li>
     </ul>
 
 
@@ -8729,7 +9332,23 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">createImplementation = function (execContext) {
     throw new Error(&#x22;Method &#x27;createImplementation&#x27; not implemented.&#x22;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Composite.prototype.createImplementation = function (execContext) {
+throw new Error(&#x22;Method &#x27;createImplementation&#x27; not implemented.&#x22;);
+};
+
+Composite.prototype.ensureImplementationCreated = function (execContext) {
+assert(!!execContext);
+if (_.isUndefined(this._implementation)) {
+    this._implementation = this.<span class="apidocCodeKeywordSpan">createImplementation</span>(execContext);
+    if (_.isPlainObject(this._implementation)) {
+        this._implementation = activityMarkup.parse(this._implementation);
+    }
+    if (!(this._implementation instanceof Activity)) {
+        throw new Error(&#x22;Method &#x27;createImplementation&#x27; must return an activity.&#x22;);
+    }
+}
+...</pre></li>
     </ul>
 
 
@@ -8753,7 +9372,23 @@ reached.&#x22;));
         }
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        throw new Error(&#x22;Method &#x27;createImplementation&#x27; must return an activity.&#x22;);
+    }
+}
+};
+
+Composite.prototype.initializeStructure = function (execContext) {
+assert(!!execContext);
+this.<span class="apidocCodeKeywordSpan">ensureImplementationCreated</span>(execContext);
+};
+
+Composite.prototype.run = function (callContext, args) {
+if (!(this._implementation instanceof Activity)) {
+    throw new Error(&#x22;Composite activity&#x27;s implementation is not available.&#x22;);
+}
+Declarator.prototype.run.call(this, callContext, args);
+...</pre></li>
     </ul>
 
 
@@ -8784,7 +9419,23 @@ reached.&#x22;));
     assert(!!execContext);
     this.ensureImplementationCreated(execContext);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Structure */
+Activity.prototype.isArrayProperty = function (propName) {
+    return this.arrayProperties.has(propName);
+};
+
+Activity.prototype._initializeStructure = function (execContext) {
+    if (!this._structureInitialized) {
+        this.<span class="apidocCodeKeywordSpan">initializeStructure</span>(execContext);
+        this._structureInitialized = true;
+    }
+};
+
+Activity.prototype.initializeStructure = _.noop;
+
+Activity.prototype.clone = function () {
+...</pre></li>
     </ul>
 
 
@@ -9002,7 +9653,24 @@ reached.&#x22;));
     let method = reason === Activity.states.fail? &#x22;error&#x22; : &#x22;log&#x22;;
     console[method](&#x22;Activity &#x27;&#x22; + name + &#x22;&#x27; state changed - reason: &#x22; + reason + result);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+    for (var _iterator = self._trackers[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done
+); _iteratorNormalCompletion = true) {
+        var t = _step.value;
+
+        t.<span class="apidocCodeKeywordSpan">activityStateChanged</span>(args);
+    }
+} catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+} finally {
+    try {
+        if (!_iteratorNormalCompletion &#x26;&#x26; _iterator.return) {
+...</pre></li>
     </ul>
 
 
@@ -9144,7 +9812,26 @@ reached.&#x22;));
     }
     this.promotedProperties.add(name);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+    to = pars[fieldName];
+} else if (fieldName[0] === &#x22;!&#x22;) {
+    // Promoted:
+    if (!activity.promotedProperties || !_.isFunction(activity.promoted)) {
+        throw new errors.ActivityMarkupError(&#x22;Activity &#x27;&#x22; + activityRef.name + &#x22; cannot have promoted properties
+.&#x22; + this._errorHint(pars));
+    }
+    activity.<span class="apidocCodeKeywordSpan">promoted</span>(fieldName.substr(1), self._createValue(types, pars[fieldName],
+true, is.template(activity)));
+} else if (fieldName[0] === &#x22;`&#x22;) {
+    // Reserved:
+    if (!activity.reservedProperties || !_.isFunction(activity.reserved)) {
+        throw new errors.ActivityMarkupError(&#x22;Activity &#x27;&#x22; + activityRef.name + &#x22; cannot have reserved properties
+.&#x22; + this._errorHint(pars));
+    }
+    activity.reserved(fieldName.substr(1), self._createValue(types, pars[fieldName], true, is.template(activity)));
+} else if (fieldName === &#x22;@require&#x22;) {
+...</pre></li>
     </ul>
 
 
@@ -9165,7 +9852,25 @@ reached.&#x22;));
     }
     this.reservedProperties.add(name);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+        activity.promoted(fieldName.substr(1), self._createValue(types, pars[fieldName], true, is.template(activity)));
+    } else if (fieldName[0] === &#x22;`&#x22;) {
+        // Reserved:
+        if (!activity.reservedProperties || !_.isFunction(activity.reserved)) {
+            throw new errors.ActivityMarkupError(&#x22;Activity &#x27;&#x22; + activityRef.name + &#x22; cannot have reserved properties
+.&#x22; + this._errorHint(pars));
+        }
+        activity.<span class="apidocCodeKeywordSpan">reserved</span>(fieldName.substr(1), self._createValue(types, pars[fieldName
+], true, is.template(activity)));
+    } else if (fieldName === &#x22;@require&#x22;) {
+        // Require:
+        self._require(types, pars[fieldName]);
+    } else {
+        activity[fieldName] = self._createValue(types, pars[fieldName], false, is.template(activity), noFunction(fieldName));
+    }
+}
+...</pre></li>
     </ul>
 
 
@@ -9305,7 +10010,23 @@ reached.&#x22;));
         }
     };
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Composite.prototype.createImplementation = function (execContext) {
+throw new Error(&#x22;Method &#x27;createImplementation&#x27; not implemented.&#x22;);
+};
+
+Composite.prototype.ensureImplementationCreated = function (execContext) {
+assert(!!execContext);
+if (_.isUndefined(this._implementation)) {
+    this._implementation = this.<span class="apidocCodeKeywordSpan">createImplementation</span>(execContext);
+    if (_.isPlainObject(this._implementation)) {
+        this._implementation = activityMarkup.parse(this._implementation);
+    }
+    if (!(this._implementation instanceof Activity)) {
+        throw new Error(&#x22;Method &#x27;createImplementation&#x27; must return an activity.&#x22;);
+    }
+}
+...</pre></li>
     </ul>
 
 
@@ -9437,7 +10158,23 @@ reached.&#x22;));
         }
     };
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Composite.prototype.createImplementation = function (execContext) {
+throw new Error(&#x22;Method &#x27;createImplementation&#x27; not implemented.&#x22;);
+};
+
+Composite.prototype.ensureImplementationCreated = function (execContext) {
+assert(!!execContext);
+if (_.isUndefined(this._implementation)) {
+    this._implementation = this.<span class="apidocCodeKeywordSpan">createImplementation</span>(execContext);
+    if (_.isPlainObject(this._implementation)) {
+        this._implementation = activityMarkup.parse(this._implementation);
+    }
+    if (!(this._implementation instanceof Activity)) {
+        throw new Error(&#x22;Method &#x27;createImplementation&#x27; must return an activity.&#x22;);
+    }
+}
+...</pre></li>
     </ul>
 
 
@@ -10248,7 +10985,22 @@ reached.&#x22;));
         callContext.end(reason, result);
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+WithBody.prototype.run = function (callContext, args) {
+    var _body = args &#x26;&#x26; args.length ? args : this._body;
+    if (_body.args &#x26;&#x26; _body.args.length) {
+        callContext.schedule(_body, &#x22;bodyCompleted&#x22;);
+    } else {
+        this.<span class="apidocCodeKeywordSpan">bodyCompleted</span>(callContext, Activity.states.complete);
+    }
+};
+
+WithBody.prototype.bodyCompleted = function (callContext, reason, result) {
+    callContext.end(reason, result);
+};
+...</pre></li>
     </ul>
 
 
@@ -10465,7 +11217,23 @@ reached.&#x22;));
         WithBody.prototype.initializeStructure.call(this);
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Structure */
+Activity.prototype.isArrayProperty = function (propName) {
+    return this.arrayProperties.has(propName);
+};
+
+Activity.prototype._initializeStructure = function (execContext) {
+    if (!this._structureInitialized) {
+        this.<span class="apidocCodeKeywordSpan">initializeStructure</span>(execContext);
+        this._structureInitialized = true;
+    }
+};
+
+Activity.prototype.initializeStructure = _.noop;
+
+Activity.prototype.clone = function () {
+...</pre></li>
     </ul>
 
 
@@ -10830,7 +11598,23 @@ reached.&#x22;));
         this.else.args = prev;
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Structure */
+Activity.prototype.isArrayProperty = function (propName) {
+    return this.arrayProperties.has(propName);
+};
+
+Activity.prototype._initializeStructure = function (execContext) {
+    if (!this._structureInitialized) {
+        this.<span class="apidocCodeKeywordSpan">initializeStructure</span>(execContext);
+        this._structureInitialized = true;
+    }
+};
+
+Activity.prototype.initializeStructure = _.noop;
+
+Activity.prototype.clone = function () {
+...</pre></li>
     </ul>
 
 
@@ -11094,7 +11878,23 @@ reached.&#x22;));
         }
     };
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Composite.prototype.createImplementation = function (execContext) {
+throw new Error(&#x22;Method &#x27;createImplementation&#x27; not implemented.&#x22;);
+};
+
+Composite.prototype.ensureImplementationCreated = function (execContext) {
+assert(!!execContext);
+if (_.isUndefined(this._implementation)) {
+    this._implementation = this.<span class="apidocCodeKeywordSpan">createImplementation</span>(execContext);
+    if (_.isPlainObject(this._implementation)) {
+        this._implementation = activityMarkup.parse(this._implementation);
+    }
+    if (!(this._implementation instanceof Activity)) {
+        throw new Error(&#x22;Method &#x27;createImplementation&#x27; must return an activity.&#x22;);
+    }
+}
+...</pre></li>
     </ul>
 
 
@@ -11965,7 +12765,23 @@ reached.&#x22;));
                                             switch (self.intervalType) {
                                                 case &#x22;secondly&#x22;:
                                                     interval = tim ...</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Composite.prototype.createImplementation = function (execContext) {
+throw new Error(&#x22;Method &#x27;createImplementation&#x27; not implemented.&#x22;);
+};
+
+Composite.prototype.ensureImplementationCreated = function (execContext) {
+assert(!!execContext);
+if (_.isUndefined(this._implementation)) {
+    this._implementation = this.<span class="apidocCodeKeywordSpan">createImplementation</span>(execContext);
+    if (_.isPlainObject(this._implementation)) {
+        this._implementation = activityMarkup.parse(this._implementation);
+    }
+    if (!(this._implementation instanceof Activity)) {
+        throw new Error(&#x22;Method &#x27;createImplementation&#x27; must return an activity.&#x22;);
+    }
+}
+...</pre></li>
     </ul>
 
 
@@ -12253,7 +13069,23 @@ reached.&#x22;));
         callContext.complete();
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var _this = this;
+
+if (!this._timeout) {
+    (function () {
+        debug(&#x22;Start.&#x22;);
+        var self = _this;
+        _this._timeout = setTimeout(function () {
+            self.<span class="apidocCodeKeywordSpan">_step</span>();
+        }, _this.options.interval || 5000);
+    })();
+}
+};
+
+WakeUp.prototype.stop = function () {
+if (this._timeout) {
+...</pre></li>
     </ul>
 
 
@@ -12449,7 +13281,23 @@ reached.&#x22;));
             self.args.push(activityMarkup.parse(markup));
         });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Structure */
+Activity.prototype.isArrayProperty = function (propName) {
+    return this.arrayProperties.has(propName);
+};
+
+Activity.prototype._initializeStructure = function (execContext) {
+    if (!this._structureInitialized) {
+        this.<span class="apidocCodeKeywordSpan">initializeStructure</span>(execContext);
+        this._structureInitialized = true;
+    }
+};
+
+Activity.prototype.initializeStructure = _.noop;
+
+Activity.prototype.clone = function () {
+...</pre></li>
     </ul>
 
 
@@ -12982,7 +13830,23 @@ reached.&#x22;));
         this.finally.args = prev;
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Structure */
+Activity.prototype.isArrayProperty = function (propName) {
+    return this.arrayProperties.has(propName);
+};
+
+Activity.prototype._initializeStructure = function (execContext) {
+    if (!this._structureInitialized) {
+        this.<span class="apidocCodeKeywordSpan">initializeStructure</span>(execContext);
+        this._structureInitialized = true;
+    }
+};
+
+Activity.prototype.initializeStructure = _.noop;
+
+Activity.prototype.clone = function () {
+...</pre></li>
     </ul>
 
 
@@ -13293,7 +14157,22 @@ reached.&#x22;));
         callContext.end(reason, result);
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+WithBody.prototype.run = function (callContext, args) {
+    var _body = args &#x26;&#x26; args.length ? args : this._body;
+    if (_body.args &#x26;&#x26; _body.args.length) {
+        callContext.schedule(_body, &#x22;bodyCompleted&#x22;);
+    } else {
+        this.<span class="apidocCodeKeywordSpan">bodyCompleted</span>(callContext, Activity.states.complete);
+    }
+};
+
+WithBody.prototype.bodyCompleted = function (callContext, reason, result) {
+    callContext.end(reason, result);
+};
+...</pre></li>
     </ul>
 
 
@@ -13414,7 +14293,22 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">bodyCompleted = function (callContext, reason, result) {
     callContext.end(reason, result);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+WithBody.prototype.run = function (callContext, args) {
+    var _body = args &#x26;&#x26; args.length ? args : this._body;
+    if (_body.args &#x26;&#x26; _body.args.length) {
+        callContext.schedule(_body, &#x22;bodyCompleted&#x22;);
+    } else {
+        this.<span class="apidocCodeKeywordSpan">bodyCompleted</span>(callContext, Activity.states.complete);
+    }
+};
+
+WithBody.prototype.bodyCompleted = function (callContext, reason, result) {
+    callContext.end(reason, result);
+};
+...</pre></li>
     </ul>
 
 
@@ -13431,7 +14325,23 @@ reached.&#x22;));
     this._body.args = this.args;
     this.args = null;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Structure */
+Activity.prototype.isArrayProperty = function (propName) {
+    return this.arrayProperties.has(propName);
+};
+
+Activity.prototype._initializeStructure = function (execContext) {
+    if (!this._structureInitialized) {
+        this.<span class="apidocCodeKeywordSpan">initializeStructure</span>(execContext);
+        this._structureInitialized = true;
+    }
+};
+
+Activity.prototype.initializeStructure = _.noop;
+
+Activity.prototype.clone = function () {
+...</pre></li>
     </ul>
 
 
@@ -13510,7 +14420,23 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">getAlias = function (activity) {
     return (activityMarkup = (activityMarkup || new ActivityMarkup())).getAlias(activity.constructor);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._registerTypesTo(this._systemTypes, sourcePath);
+};
+
+ActivityMarkup.prototype._registerTypesTo = function (types, sourcePath) {
+    var self = this;
+    var obj = requireFromRoot(sourcePath);
+    Reflection.visitObject(obj, function (inObj) {
+        var alias = self.<span class="apidocCodeKeywordSpan">getAlias</span>(inObj);
+        if (alias &#x26;&#x26; !types.has(alias)) {
+            // This is an activity type
+            types.set(alias, inObj);
+        }
+        return alias === null;
+    });
+};
+...</pre></li>
     </ul>
 
 
@@ -13525,7 +14451,23 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">parse = function (markup) {
     return (activityMarkup = (activityMarkup || new ActivityMarkup())).parse(markup);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._isInitialized = false;
+} else if (contextOrActivity instanceof ActivityExecutionContext) {
+    this.rootActivity = contextOrActivity.rootActivity;
+    this.context = contextOrActivity;
+    this.context.engine = this;
+    this._isInitialized = true;
+} else if (_.isPlainObject(contextOrActivity)) {
+    this.rootActivity = activityMarkup.<span class="apidocCodeKeywordSpan">parse</span>(contextOrActivity);
+    this.context = new ActivityExecutionContext(this);
+    this._isInitialized = false;
+} else {
+    throw new TypeError(&#x22;Argument &#x27;contextOrActivity&#x27; is not an activity, context or a markup.&#x22;);
+}
+
+this._rootState = null;
+...</pre></li>
     </ul>
 
 
@@ -13540,7 +14482,23 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">stringify = function (obj) {
     return (activityMarkup = (activityMarkup || new ActivityMarkup())).stringify(obj);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ActivityMarkup.prototype._clone = function (obj) {
+    return templateHelpers.cloneDeep(obj);
+};
+
+ActivityMarkup.prototype._errorHint = function (markup) {
+    var len = 20;
+    var json = JSON.<span class="apidocCodeKeywordSpan">stringify</span>(markup);
+    if (json.length &#x3e; len) {
+        json = json.substr(0, len) + &#x22; ...&#x22;;
+    }
+    return &#x22;\nSee error near:\n&#x22; + json;
+};
+
+ActivityMarkup.prototype.stringify = function (obj) {
+...</pre></li>
     </ul>
 
 
@@ -13555,7 +14513,23 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">toMarkup = function (activity) {
     return (activityMarkup = (activityMarkup || new ActivityMarkup())).toMarkup(activity);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+ActivityMarkup.prototype.stringify = function (obj) {
+if (_.isString(obj)) {
+    return obj;
+}
+if (is.activity(obj)) {
+    obj = this.<span class="apidocCodeKeywordSpan">toMarkup</span>(obj);
+}
+if (!_.isPlainObject(obj)) {
+    throw new TypeError(&#x22;Parameter &#x27;obj&#x27; is not a plain object.&#x22;);
+}
+var cloned = _.cloneDeep(obj);
+this._functionsToString(cloned);
+return JSON.stringify(cloned);
+...</pre></li>
     </ul>
 
 
@@ -13737,7 +14711,23 @@ reached.&#x22;));
     spawn._promiseFulfilled(undefined);
     return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    assert(_.isString(lockName));
+    assert(_.isNumber(enterLockTimeoutMs));
+    assert(enterLockTimeoutMs &#x3e;= 1000);
+    assert(_.isNumber(inLockTimeoutMs));
+    assert(inLockTimeoutMs &#x3e;= 1000);
+
+    var self = this;
+    return asyncHelpers.<span class="apidocCodeKeywordSpan">aggressiveRetry</span>(function () {
+        return Bluebird.resolve(self._impl.enterLock(lockName, inLockTimeoutMs));
+    }, function (lockInfo) {
+        return !!lockInfo;
+    }, enterLockTimeoutMs, function () {
+        return new errors.TimeoutError(&#x22;Entering lock &#x27;&#x22; + lockName + &#x22;&#x27; has timed out.&#x22;);
+    });
+};
+...</pre></li>
     </ul>
 
 
@@ -13794,7 +14784,23 @@ reached.&#x22;));
     }
     return map;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        throw new TypeError(&#x22;activityStates property value of argument &#x27;json&#x27; is not an object.&#x22;);
+    }
+    if (!json.bookmarks) {
+        throw new TypeError(&#x22;Bookmarks property value of argument &#x27;json&#x27; is not an object.&#x22;);
+    }
+
+    json = {
+        activityStates: converters.<span class="apidocCodeKeywordSpan">arrayToMap</span>(json.activityStates),
+        bookmarks: converters.arrayToMap(json.bookmarks),
+        scope: json.scope
+    };
+}
+
+var _iteratorNormalCompletion7 = true;
+var _didIteratorError7 = false;
+...</pre></li>
     </ul>
 
 
@@ -13817,7 +14823,23 @@ reached.&#x22;));
     }
     return set;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return true;
+}
+if (part.value.$type === constants.types.map) {
+    result.value = converters.arrayToMap(part.value.data);
+    return true;
+}
+if (part.value.$type === constants.types.set) {
+    result.value = converters.<span class="apidocCodeKeywordSpan">arrayToSet</span>(part.value.data);
+    return true;
+}
+if (part.value.$type === constants.types.rex) {
+    result.value = new RegExp(part.value.pattern, part.value.flags);
+    return true;
+}
+if (part.value.$type === constants.types.object) {
+...</pre></li>
     </ul>
 
 
@@ -13840,7 +14862,23 @@ reached.&#x22;));
     }
     return json;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    serialized = serializer.toJSON({
+        activityStates: activityStates,
+        bookmarks: this._bookmarks,
+        scope: scopeStateAndPromotions.state
+    });
+} else {
+    serialized = {
+        activityStates: converters.<span class="apidocCodeKeywordSpan">mapToArray</span>(activityStates),
+        bookmarks: converters.mapToArray(this._bookmarks),
+        scope: scopeStateAndPromotions.state
+    };
+}
+
+return {
+    state: serialized,
+...</pre></li>
     </ul>
 
 
@@ -13863,7 +14901,23 @@ reached.&#x22;));
     }
     return json;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        $type: constants.types.map
+    };
+    return true;
+}
+if (propValue instanceof Set) {
+    result.name = propName;
+    result.value = {
+        data: converters.<span class="apidocCodeKeywordSpan">setToArray</span>(propValue),
+        $type: constants.types.set
+    };
+    return true;
+}
+if (propValue instanceof RegExp) {
+    result.name = propName;
+    result.value = {
+...</pre></li>
     </ul>
 
 
@@ -13902,7 +14956,25 @@ reached.&#x22;));
     Error.captureStackTrace(this, this.constructor);
     this.message = message;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+ActivityMarkup.prototype._createActivity = function (types, markup) {
+var filedNames = _.filter(_.keys(markup), function (k) {
+    return k !== &#x22;@require&#x22;;
+});
+if (filedNames.length !== 1) {
+    throw new errors.<span class="apidocCodeKeywordSpan">ActivityMarkupError</span>(&#x22;There should be one field.&#x22; + this
+._errorHint(markup));
+}
+
+var activityAlias = getActivityTypeName(filedNames[0]);
+if (activityAlias) {
+    return this._createAndInitActivityInstance(types, activityAlias, markup);
+} else {
+    throw new errors.ActivityMarkupError(&#x22;Root entry is not an activity type name &#x27;&#x22; + filedNames[0] + &#x22;&#x27
+;.&#x22; + this._errorHint(markup));
+...</pre></li>
     </ul>
 
 
@@ -13919,7 +14991,24 @@ reached.&#x22;));
     Error.captureStackTrace(this, this.constructor);
     this.message = message;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ActivityExecutionContext.prototype._initialize = function (parent, activity, idCounter) {
+var activityId = activity._instanceId;
+var nextId = (idCounter.instanceId++).toString();
+if (!activityId) {
+    activityId = nextId;
+    activity.instanceId = activityId;
+} else if (activityId !== nextId) {
+    throw new errors.<span class="apidocCodeKeywordSpan">ActivityRuntimeError</span>(&#x22;Activity &#x22; + activity + &#x22; has
+ been assigned to an other position.&#x22;);
+}
+
+var state = this.getExecutionState(activityId);
+state.parentInstanceId = parent ? parent.instanceId : null;
+this._knownActivities.set(activityId, activity);
+
+var _iteratorNormalCompletion = true;
+...</pre></li>
     </ul>
 
 
@@ -13936,7 +15025,24 @@ reached.&#x22;));
     Error.captureStackTrace(this, this.constructor);
     this.message = message;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        reject(e);
+    }
+});
+};
+
+ActivityExecutionEngine.prototype._verifyNotStarted = function () {
+if (!(!this.execState || this.execState === enums.activityStates.complete)) {
+    throw new errors.<span class="apidocCodeKeywordSpan">ActivityStateExceptionError</span>(&#x22;Workflow has been already started
+.&#x22;);
+}
+};
+
+ActivityExecutionEngine.prototype.resumeBookmark = function (name, reason, result) {
+var self = this;
+self._initialize();
+return new Bluebird(function (resolve, reject) {
+...</pre></li>
     </ul>
 
 
@@ -13973,7 +15079,24 @@ reached.&#x22;));
     Error.captureStackTrace(this, this.constructor);
     this.message = message;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this._resumeBMQueue.enqueue(name, reason, result);
+};
+
+ActivityExecutionContext.prototype.resumeBookmarkExternal = function (name, reason, result) {
+var self = this;
+var bm = self._bookmarks.get(name);
+if (!bm) {
+    throw new errors.<span class="apidocCodeKeywordSpan">BookmarkNotFoundError</span>(&#x22;Internal resume bookmark request cannot
+ be processed because bookmark &#x27;&#x22; + name + &#x22;&#x27; doesn&#x27;t exists.&#x22;);
+}
+self._doResumeBookmark(new CallContext(this, bm.instanceId), bm, reason, result);
+};
+
+ActivityExecutionContext.prototype.processResumeBookmarkQueue = function () {
+var self = this;
+var command = self._resumeBMQueue.dequeue();
+...</pre></li>
     </ul>
 
 
@@ -13988,7 +15111,23 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">function Cancelled() {
     ActivityStateExceptionError.call(this, &#x22;Activity execution has been cancelled.&#x22;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var reason = eArgs.reason;
+var result = eArgs.result;
+switch (reason) {
+    case Activity.states.complete:
+        resolve(result);
+        break;
+    case Activity.states.cancel:
+        reject(new errors.<span class="apidocCodeKeywordSpan">Cancelled</span>());
+        break;
+    case Activity.states.idle:
+        resolve(self._idle);
+        break;
+    default:
+        result = result || new errors.ActivityRuntimeError(&#x22;Unknown error.&#x22;);
+        reject(result);
+...</pre></li>
     </ul>
 
 
@@ -14003,7 +15142,26 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">function Idle(message) {
     ActivityStateExceptionError.call(this, message || &#x22;Activity is idle.&#x22;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                        try {
+if (_reason === enums.activityStates.complete || _reason === enums.activityStates.idle) {
+    var endBmTimestamp = self.context.getBookmarkTimestamp(name);
+    if (endBmTimestamp &#x26;&#x26; endBmTimestamp === bmTimestamp) {
+        if (_reason === enums.activityStates.complete) {
+            reject(new errors.ActivityRuntimeError(&#x22;Workflow has been completed before bookmark &#x27;&#x22; + name + &#x22
+;&#x27; reached.&#x22;));
+        } else {
+            reject(new errors.<span class="apidocCodeKeywordSpan">Idle</span>(&#x22;Workflow has been gone to idle before bookmark
+ &#x27;&#x22; + name + &#x22;&#x27; reached.&#x22;));
+        }
+    } else {
+        resolve();
+    }
+} else if (_reason === enums.activityStates.cancel) {
+    reject(new errors.ActivityRuntimeError(&#x22;Workflow has been cancelled before bookmark &#x27;&#x22; + name + &#x22;&#x27;
+reached.&#x22;));
+} else if (_reason === enums.activityStates.fail) {
+...</pre></li>
     </ul>
 
 
@@ -14020,7 +15178,24 @@ reached.&#x22;));
     Error.captureStackTrace(this, this.constructor);
     this.message = message;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        _context8.next = 27;
+        break;
+    }
+
+    msg = &#x22;Cannot call method of workflow &#x27;&#x22; + workflowName + &#x22;&#x27;, because &#x27;&#x22; + methodName + &#
+x22;&#x27; is locked.&#x22;;
+
+    debug(msg);
+    throw new errors.<span class="apidocCodeKeywordSpan">MethodIsNotAccessibleError</span>(msg);
+
+case 27:
+    throw _context8.t1;
+
+case 28:
+case &#x22;end&#x22;:
+    return _context8.stop();
+...</pre></li>
     </ul>
 
 
@@ -14037,7 +15212,24 @@ reached.&#x22;));
     Error.captureStackTrace(this, this.constructor);
     this.message = message;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+            case 79:
+                _context3.next = 83;
+                break;
+
+            case 81:
+                debug(&#x22;No continuable workflows have been found.&#x22;);
+                throw new errors.<span class="apidocCodeKeywordSpan">MethodNotFoundError</span>(&#x22;Cannot create or continue
+workflow &#x27;&#x22; + workflowName + &#x22;&#x27; by calling method &#x27;&#x22; + methodName + &#x22;&#x27;.&#x22;);
+
+            case 83:
+            case &#x22;end&#x22;:
+                return _context3.stop();
+        }
+    }
+}, _callee3, this, [[17, 21, 25, 33], [26,, 28, 32], [51, 59], [67, 75]]);
+...</pre></li>
     </ul>
 
 
@@ -14054,7 +15246,23 @@ reached.&#x22;));
     Error.captureStackTrace(this, this.constructor);
     this.message = message;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var self = this;
+return asyncHelpers.aggressiveRetry(function () {
+    return Bluebird.resolve(self._impl.enterLock(lockName, inLockTimeoutMs));
+}, function (lockInfo) {
+    return !!lockInfo;
+}, enterLockTimeoutMs, function () {
+    return new errors.<span class="apidocCodeKeywordSpan">TimeoutError</span>(&#x22;Entering lock &#x27;&#x22; + lockName + &#x22
+;&#x27; has timed out.&#x22;);
+});
+};
+
+WorkflowPersistence.prototype.renewLock = function (lockId, inLockTimeoutMs) {
+assert(!!lockId);
+assert(inLockTimeoutMs &#x3e; 0);
+...</pre></li>
     </ul>
 
 
@@ -14071,7 +15279,24 @@ reached.&#x22;));
     Error.captureStackTrace(this, this.constructor);
     this.message = message;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        var mn = methodName.trim();
+        if (mn) {
+            callContext.createBookmark(specStrings.hosting.createBeginMethodBMName(mn), &#x22;_methodInvoked&#x22;);
+            callContext.idle();
+            return;
+        }
+    }
+    callContext.fail(new errors.<span class="apidocCodeKeywordSpan">ValidationError</span>(&#x22;BeginMethod activity methodName
+ property&#x27;s value &#x27;&#x22; + methodName + &#x22;&#x27; must be a valid identifier.&#x22;));
+};
+
+BeginMethod.prototype._methodInvoked = function (callContext, reason, result) {
+    callContext.end(reason, result);
+};
+
+module.exports = BeginMethod;
+...</pre></li>
     </ul>
 
 
@@ -14088,7 +15313,24 @@ reached.&#x22;));
     Error.captureStackTrace(this, this.constructor);
     this.message = message;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            } finally {
+                if (_didIteratorError3) {
+                    throw _iteratorError3;
+                }
+            }
+        }
+    } catch (e) {
+        throw new errors.<span class="apidocCodeKeywordSpan">WorkflowError</span>(&#x22;Cannot restore state tree, because data
+is corrupt. Inner error: &#x22; + e.stack);
+    }
+};
+/* SERIALIZATION */
+
+/* PROXY */
+
+ScopeTree.prototype._getRealParent = function (currentNode) {
+...</pre></li>
     </ul>
 
 
@@ -14105,7 +15347,23 @@ reached.&#x22;));
     Error.captureStackTrace(this, this.constructor);
     this.message = message;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+this._instanceData.delete(specStrings.hosting.doubleKeys(workflowName, instanceId));
+};
+
+MemoryPersistence.prototype._loadState = function (workflowName, instanceId) {
+var state = this._instanceData.get(specStrings.hosting.doubleKeys(workflowName, instanceId));
+if (!state) {
+    throw new errors.<span class="apidocCodeKeywordSpan">WorkflowNotFoundError</span>(&#x22;Instance data of workflow &#x27;&#x22
+; + workflowName + &#x22;&#x27; by id &#x27;&#x22; + instanceId + &#x22;&#x27; is not found.&#x22;);
+}
+return state;
+};
+
+MemoryPersistence.prototype.loadPromotedProperties = function (workflowName, instanceId) {
+debug(&#x22;loadPromotedProperties(%s, %s)&#x22;, workflowName, instanceId);
+...</pre></li>
     </ul>
 
 
@@ -14125,7 +15383,22 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">activity(obj) {
     return obj &#x26;&#x26; obj instanceof require(&#x22;../activities/activity&#x22;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    });
+};
+
+ActivityExecutionContext.prototype.initialize = function (rootActivity) {
+    if (this.rootActivity) {
+        throw new Error(&#x22;Context is already initialized.&#x22;);
+    }
+    if (!is.<span class="apidocCodeKeywordSpan">activity</span>(rootActivity)) {
+        throw new TypeError(&#x22;Argument &#x27;rootActivity&#x27; value is not an activity.&#x22;);
+    }
+
+    this.rootActivity = rootActivity;
+    this._initialize(null, rootActivity, { instanceId: 0 });
+};
+...</pre></li>
     </ul>
 
 
@@ -14140,7 +15413,24 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">template(obj) {
     return obj &#x26;&#x26; obj instanceof require(&#x22;../activities/template&#x22;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var _didIteratorError3 = false;
+var _iteratorError3 = undefined;
+
+try {
+    for (var _iterator3 = pars[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3
+ = true) {
+        var obj = _step3.value;
+
+        activity.args.push(self._createValue(types, obj, false, is.<span class="apidocCodeKeywordSpan">template</span>(activity)));
+    }
+} catch (err) {
+    _didIteratorError3 = true;
+    _iteratorError3 = err;
+} finally {
+    try {
+        if (!_iteratorNormalCompletion3 &#x26;&#x26; _iterator3.return) {
+...</pre></li>
     </ul>
 
 
@@ -14270,7 +15560,23 @@ reached.&#x22;));
 
     return new Function(&#x22;return (&#x22; + path + &#x22;).toString();&#x22;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+if (!_.isString(path)) {
+    throw new TypeError(&#x22;Argument &#x27;path&#x27; is not a string.&#x22;);
+}
+
+var parser = this._cache[path];
+if (_.isUndefined(parser)) {
+    this._cache[path] = parser = this.<span class="apidocCodeKeywordSpan">_createParser</span>(path);
+}
+
+return parser.call(obj);
+};
+
+InstanceIdParser.prototype._createParser = function (path) {
+if (path.indexOf(&#x22;this&#x22;) !== 0) {
+...</pre></li>
     </ul>
 
 
@@ -14297,7 +15603,23 @@ reached.&#x22;));
 
     return parser.call(obj);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._isInitialized = false;
+} else if (contextOrActivity instanceof ActivityExecutionContext) {
+    this.rootActivity = contextOrActivity.rootActivity;
+    this.context = contextOrActivity;
+    this.context.engine = this;
+    this._isInitialized = true;
+} else if (_.isPlainObject(contextOrActivity)) {
+    this.rootActivity = activityMarkup.<span class="apidocCodeKeywordSpan">parse</span>(contextOrActivity);
+    this.context = new ActivityExecutionContext(this);
+    this._isInitialized = false;
+} else {
+    throw new TypeError(&#x22;Argument &#x27;contextOrActivity&#x27; is not an activity, context or a markup.&#x22;);
+}
+
+this._rootState = null;
+...</pre></li>
     </ul>
 
 
@@ -14344,7 +15666,22 @@ reached.&#x22;));
     }
     return cLock;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+debug(&#x22;It is already held.&#x22;);
+return null;
+};
+
+MemoryPersistence.prototype.renewLock = function (lockId, inLockTimeoutMs) {
+debug(&#x22;renewLock(%s, %d)&#x22;, lockId, inLockTimeoutMs);
+
+var cLock = this.<span class="apidocCodeKeywordSpan">_getLockById</span>(lockId);
+cLock.heldTo = new Date().addMilliseconds(inLockTimeoutMs);
+debug(&#x22;Lock %s extended to %s&#x22;, lockId, cLock.heldTo);
+};
+
+MemoryPersistence.prototype.exitLock = function (lockId) {
+debug(&#x22;exitLock(%s)&#x22;, lockId);
+...</pre></li>
     </ul>
 
 
@@ -14364,7 +15701,23 @@ reached.&#x22;));
     }
     return state;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    instanceId: state.instanceId
+};
+};
+
+MemoryPersistence.prototype.loadState = function (workflowName, instanceId) {
+debug(&#x22;loadState(%s, %s)&#x22;, workflowName, instanceId);
+
+var state = this.<span class="apidocCodeKeywordSpan">_loadState</span>(workflowName, instanceId);
+state = _.clone(state);
+state.state = JSON.parse(state.state);
+return state;
+};
+
+MemoryPersistence.prototype.removeState = function (workflowName, instanceId) {
+debug(&#x22;removeState(%s, %s)&#x22;, workflowName, instanceId);
+...</pre></li>
     </ul>
 
 
@@ -14381,7 +15734,23 @@ reached.&#x22;));
     this._locksById.clear();
     this._locksByName.clear();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        throw new Error(&#x22;Item is not a current node&#x27;s child.&#x22;);
+    }
+    childItem._parent = null;
+    this._children.delete(childItem.instanceId);
+};
+
+ScopeNode.prototype.clearChildren = function () {
+    this._children.<span class="apidocCodeKeywordSpan">clear</span>();
+};
+
+ScopeNode.prototype.isPropertyExists = function (name) {
+    return !_.isUndefined(this._scopePart[name]);
+};
+
+ScopeNode.prototype.getPropertyValue = function (name, canReturnPrivate) {
+...</pre></li>
     </ul>
 
 
@@ -14417,7 +15786,24 @@ reached.&#x22;));
     debug(&#x22;It is already held.&#x22;);
     return null;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+lockName = specStrings.hosting.doubleKeys(workflowName, instanceId);
+lockInfo = undefined;
+
+debug(&#x22;Locking instance: %s&#x22;, instanceId);
+_context.next = 10;
+return this._persistence.<span class="apidocCodeKeywordSpan">enterLock</span>(lockName, this.options.enterLockTimeout, this._inLockTimeout
+);
+
+                case 10:
+lockInfo = _context.sent;
+keepLockAlive = null;
+_context.prev = 12;
+
+debug(&#x22;Locked: %j&#x22;, lockInfo);
+...</pre></li>
     </ul>
 
 
@@ -14438,7 +15824,23 @@ reached.&#x22;));
 
     debug(&#x22;UNLOCKED: %s&#x22;, cLock.name);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    // Unlock:
+    debug(&#x22;Unlocking.&#x22;);
+    if (keepLockAlive) {
+        keepLockAlive.end();
+    }
+    _context.next = 30;
+    return this._persistence.<span class="apidocCodeKeywordSpan">exitLock</span>(lockInfo.id);
+
+case 30:
+    return _context.finish(25);
+
+case 31:
+    _context.next = 34;
+    break;
+...</pre></li>
     </ul>
 
 
@@ -14489,7 +15891,22 @@ reached.&#x22;));
     });
     return _.take(result, count);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case 0:
+    if (!this.persistence) {
+        _context4.next = 6;
+        break;
+    }
+
+    _context4.next = 3;
+    return this.persistence.<span class="apidocCodeKeywordSpan">getNextWakeupables</span>(this._batchSize * 1.5);
+
+case 3:
+    return _context4.abrupt(&#x22;return&#x22;, _context4.sent);
+
+case 6:
+    return _context4.abrupt(&#x22;return&#x22;, this.knownInstaStore.getNextWakeupables(this._batchSize * 1.5));
+...</pre></li>
     </ul>
 
 
@@ -14514,7 +15931,24 @@ reached.&#x22;));
     }
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case 0:
+    if (!this._persistence) {
+        _context14.next = 4;
+        break;
+    }
+
+    _context14.next = 3;
+    return this._persistence.<span class="apidocCodeKeywordSpan">getRunningInstanceHeadersForOtherVersion</span>(workflowName, version
+);
+
+case 3:
+    return _context14.abrupt(&#x22;return&#x22;, _context14.sent);
+
+case 4:
+    return _context14.abrupt(&#x22;return&#x22;, this._knownRunningInstances.getRunningInstanceHeadersForOtherVersion(workflowName
+, version));
+...</pre></li>
     </ul>
 
 
@@ -14540,7 +15974,23 @@ reached.&#x22;));
         instanceId: state.instanceId
     };
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (!self._persistence) {
+    _context11.next = 12;
+    break;
+}
+
+_context11.next = 5;
+return self._persistence.<span class="apidocCodeKeywordSpan">getRunningInstanceIdHeader</span>(workflowName, instanceId);
+
+                case 5:
+_header = _context11.sent;
+
+if (!_header) {
+    _context11.next = 10;
+    break;
+...</pre></li>
     </ul>
 
 
@@ -14557,7 +16007,23 @@ reached.&#x22;));
 
     return this._instanceData.has(specStrings.hosting.doubleKeys(workflowName, instanceId));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case 0:
+    _context10.next = 2;
+    return this._persistence.enterLock(specStrings.hosting.doubleKeys(insta.workflowName, insta.id), this.options.enterLockTimeout
+, this._getInLockTimeout());
+
+case 2:
+    li = _context10.sent;
+    _context10.next = 5;
+    return this._persistence.<span class="apidocCodeKeywordSpan">isRunning</span>(insta.workflowName, insta.id);
+
+case 5:
+    if (!_context10.sent) {
+        _context10.next = 7;
+        break;
+    }
+...</pre></li>
     </ul>
 
 
@@ -14575,7 +16041,24 @@ reached.&#x22;));
     let state = this._instanceData.get(specStrings.hosting.doubleKeys(workflowName, instanceId));
     return state ? state.promotedProperties : null;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return Bluebird.resolve(this._impl.removeState(workflowName, instanceId, succeeded, error));
+};
+
+WorkflowPersistence.prototype.loadPromotedProperties = function (workflowName, instanceId) {
+    assert(_.isString(workflowName));
+    assert(!!instanceId);
+
+    return Bluebird.resolve(this._impl.<span class="apidocCodeKeywordSpan">loadPromotedProperties</span>(workflowName, instanceId
+));
+};
+
+WorkflowPersistence.prototype.getNextWakeupables = function (count) {
+    assert(count &#x3e; 0);
+
+    return Bluebird.resolve(this._impl.getNextWakeupables(count));
+};
+...</pre></li>
     </ul>
 
 
@@ -14595,7 +16078,22 @@ reached.&#x22;));
     state.state = JSON.parse(state.state);
     return state;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (!(insta.updatedOn === null || insta.updatedOn.getTime() !== actualTimestamp.getTime() || self.options.alwaysLoadState)) {
+    _context12.next = 13;
+    break;
+}
+
+_context12.next = 8;
+return self._persistence.<span class="apidocCodeKeywordSpan">loadState</span>(workflowName, instanceId);
+
+                case 8:
+state = _context12.sent;
+
+insta.restoreState(state);
+return _context12.abrupt(&#x22;return&#x22;, insta);
+...</pre></li>
     </ul>
 
 
@@ -14615,7 +16113,23 @@ reached.&#x22;));
 
     this._instanceData.set(specStrings.hosting.doubleKeys(state.workflowName, state.instanceId), state);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    this._knownRunningInstances.add(workflowName, insta);
+
+    // Persist and unlock:
+    err = null;
+    _context4.prev = 22;
+    _context4.next = 25;
+    return this._persistence.<span class="apidocCodeKeywordSpan">persistState</span>(insta);
+
+case 25:
+    this.onStart(insta, methodName, args);
+    _context4.next = 33;
+    break;
+
+case 28:
+...</pre></li>
     </ul>
 
 
@@ -14632,7 +16146,24 @@ reached.&#x22;));
 
     this._instanceData.delete(specStrings.hosting.doubleKeys(workflowName, instanceId));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+_context.prev = 12;
+
+debug(&#x22;Locked: %j&#x22;, lockInfo);
+keepLockAlive = new KeepLockAlive(this._persistence, lockInfo, this._inLockTimeout, this.options.lockRenewalTimeout);
+
+// Do stuff:
+_context.next = 17;
+return this._persistence.<span class="apidocCodeKeywordSpan">removeState</span>(workflowName, instanceId, false, &#x22;STOPPED.&#
+x22;);
+
+                case 17:
+remove(instanceId);
+
+debug(&#x22;Removed: %s&#x22;, instanceId);
+_context.next = 25;
+break;
+...</pre></li>
     </ul>
 
 
@@ -14651,7 +16182,24 @@ reached.&#x22;));
     cLock.heldTo = new Date().addMilliseconds(inLockTimeoutMs);
     debug(&#x22;Lock %s extended to %s&#x22;, lockId, cLock.heldTo);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var KeepAlive = require(&#x22;./keepAlive&#x22;);
+var util = require(&#x22;util&#x22;);
+var Bluebird = require(&#x22;bluebird&#x22;);
+
+function KeepLockAlive(persistence, lockInfo, inLockTimeout, renewPeriod) {
+    var self = this;
+    KeepAlive.call(self, function () {
+        if (lockInfo &#x26;&#x26; lockInfo.id) return persistence.<span class="apidocCodeKeywordSpan">renewLock</span>(lockInfo.
+id, inLockTimeout);else return Bluebird.resolve(0);
+    }, renewPeriod);
+}
+
+util.inherits(KeepLockAlive, KeepAlive);
+
+module.exports = KeepLockAlive;
+//# sourceMappingURL=keepLockAlive.js.map
+...</pre></li>
     </ul>
 
 
@@ -14743,7 +16291,23 @@ reached.&#x22;));
     spawn._promiseFulfilled(undefined);
     return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    if (!_context3.t1) {
+        _context3.next = 43;
+        break;
+    }
+
+    _context3.next = 42;
+    return self.<span class="apidocCodeKeywordSpan">_checkIfInstanceRunning</span>(workflowName, result.id);
+
+case 42:
+    _context3.t1 = _context3.sent;
+
+case 43:
+    if (!_context3.t1) {
+        _context3.next = 46;
+...</pre></li>
     </ul>
 
 
@@ -14764,7 +16328,22 @@ reached.&#x22;));
     spawn._promiseFulfilled(undefined);
     return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+WorkflowHost.prototype._initialize = function () {
+var self = this;
+if (!this._isInitialized) {
+    if (this._options.wakeUpOptions &#x26;&#x26; this._options.wakeUpOptions.interval &#x3e; 0) {
+        this._wakeUp = new WakeUp(this._knownRunningInstances, this._persistence, this._options.wakeUpOptions);
+        this._wakeUp.on(&#x22;continue&#x22;, function (i) {
+            self.<span class="apidocCodeKeywordSpan">_continueWokeUpInstance</span>(i);
+        });
+        this._wakeUp.on(&#x22;error&#x22;, function (e) {
+            self.onWarn(e);
+        });
+        this._wakeUp.start();
+    }
+...</pre></li>
     </ul>
 
 
@@ -14785,7 +16364,24 @@ reached.&#x22;));
     spawn._promiseFulfilled(undefined);
     return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _context3.next = 81;
+    break;
+}
+
+debug(&#x22;Found a creatable workflow (name: &#x27;%s&#x27;, version: &#x27;%s&#x27;), invoking a create method on that.&#x22;,
+creatable.execContext.rootActivity.name, creatable.version);
+_context3.prev = 67;
+_context3.next = 70;
+return self.<span class="apidocCodeKeywordSpan">_createInstanceAndInvokeMethod</span>(creatable.execContext, creatable.version,
+methodName, args);
+
+                case 70:
+cr = _context3.sent;
+
+debug(&#x22;Create completed, result: %j&#x22;, cr);
+return _context3.abrupt(&#x22;return&#x22;, cr);
+...</pre></li>
     </ul>
 
 
@@ -14807,7 +16403,23 @@ reached.&#x22;));
         });
     return insta;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+lockInfo = null;
+
+if (this._persistence) {
+    _context4.next = 12;
+    break;
+}
+
+insta = this.<span class="apidocCodeKeywordSpan">_createWFInstance</span>();
+_context4.next = 6;
+return insta.create(execContext, workflowVersion, methodName, args, lockInfo);
+
+                case 6:
+_result = _context4.sent;
+
+this._knownRunningInstances.add(workflowName, insta);
+...</pre></li>
     </ul>
 
 
@@ -14823,7 +16435,23 @@ reached.&#x22;));
     insta.removeAllListeners();
     this._knownRunningInstances.remove(insta.workflowName, insta.id);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                case 0:
+self = this;
+
+remove = function remove(instanceId) {
+    var knownInsta = self._knownRunningInstances.get(workflowName, instanceId);
+    if (knownInsta) {
+        debug(&#x22;Removing instance: %s&#x22;, instanceId);
+        self.<span class="apidocCodeKeywordSpan">_deleteWFInstance</span>(knownInsta);
+        self.onEnd(knownInsta, undefined, true);
+    }
+};
+
+debug(&#x22;Stopping workflow &#x27;%s&#x27; with id: &#x27;%s&#x27;.&#x22;, workflowName, instanceId);
+
+_context.prev = 3;
+...</pre></li>
     </ul>
 
 
@@ -14844,7 +16472,24 @@ reached.&#x22;));
     spawn._promiseFulfilled(undefined);
     return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    break;
+}
+
+throw new errors.WorkflowError(&#x22;Cannot parse BeginMethod&#x27;s instanceIdPath &#x27;&#x22; + instanceIdPath + &#x22;&#x27;
+on arguments of method &#x27;&#x22; + methodName + &#x22;&#x27;.&#x22;);
+
+                                    case 4:
+_context.next = 6;
+return self.<span class="apidocCodeKeywordSpan">_enterLockForCreatedInstance</span>(lockInfo);
+
+                                    case 6:
+createEndMethodReached = false;
+result = undefined;
+endInstanceIdPath = null;
+
+self._endMethodCallback = function (mn, ip, r) {
+...</pre></li>
     </ul>
 
 
@@ -14859,7 +16504,24 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">_getInLockTimeout = function () {
     return this.options.lockRenewalTimeout + Math.max(this.options.lockRenewalTimeout * 0.4, 3000);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+WorkflowHost.prototype._enterLockForCreatedInstance = async(regeneratorRuntime.mark(function _callee10(insta, lockInfo) {
+    var li;
+    return regeneratorRuntime.wrap(function _callee10$(_context10) {
+        while (1) {
+            switch (_context10.prev = _context10.next) {
+case 0:
+    _context10.next = 2;
+    return this._persistence.enterLock(specStrings.hosting.doubleKeys(insta.workflowName, insta.id), this.options.enterLockTimeout
+, this.<span class="apidocCodeKeywordSpan">_getInLockTimeout</span>());
+
+case 2:
+    li = _context10.sent;
+    _context10.next = 5;
+    return this._persistence.isRunning(insta.workflowName, insta.id);
+
+case 5:
+...</pre></li>
     </ul>
 
 
@@ -14880,7 +16542,23 @@ reached.&#x22;));
     spawn._promiseFulfilled(undefined);
     return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (!currentVersion) {
+    _context2.next = 39;
+    break;
+}
+
+_context2.next = 7;
+return this.<span class="apidocCodeKeywordSpan">_getRunningInstanceHeadersForOtherVersion</span>(workflowName, currentVersion);
+
+                case 7:
+oldVersionHeaders = _context2.sent;
+
+if (!oldVersionHeaders.length) {
+    _context2.next = 37;
+    break;
+...</pre></li>
     </ul>
 
 
@@ -14905,7 +16583,23 @@ reached.&#x22;));
         this._isInitialized = true;
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        throw new Error(&#x22;Context is already initialized.&#x22;);
+    }
+    if (!is.activity(rootActivity)) {
+        throw new TypeError(&#x22;Argument &#x27;rootActivity&#x27; value is not an activity.&#x22;);
+    }
+
+    this.rootActivity = rootActivity;
+    this.<span class="apidocCodeKeywordSpan">_initialize</span>(null, rootActivity, { instanceId: 0 });
+};
+
+ActivityExecutionContext.prototype._checkInit = function () {
+    if (!this.rootActivity) {
+        throw new Error(&#x22;Context is not initialized.&#x22;);
+    }
+};
+...</pre></li>
     </ul>
 
 
@@ -14926,7 +16620,23 @@ reached.&#x22;));
     spawn._promiseFulfilled(undefined);
     return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _context3.next = 65;
+    break;
+}
+
+debug(&#x22;Found a continuable instance id: %s. Invoking method on that.&#x22;, instanceId);
+_context3.prev = 51;
+_context3.next = 54;
+return self.<span class="apidocCodeKeywordSpan">_invokeMethodOnRunningInstance</span>(instanceId, workflowName, methodName, args
+);
+
+                case 54:
+ir = _context3.sent;
+
+debug(&#x22;Invoke completed, result: %j&#x22;, ir);
+return _context3.abrupt(&#x22;return&#x22;, ir);
+...</pre></li>
     </ul>
 
 
@@ -14947,7 +16657,24 @@ reached.&#x22;));
     spawn._promiseFulfilled(undefined);
     return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    if (!_header) {
+        _context11.next = 10;
+        break;
+    }
+
+    _context11.next = 9;
+    return self.<span class="apidocCodeKeywordSpan">_restoreInstanceState</span>(instanceId, workflowName, _header.workflowVersion
+, _header.updatedOn);
+
+case 9:
+    insta = _context11.sent;
+
+case 10:
+    _context11.next = 13;
+    break;
+...</pre></li>
     </ul>
 
 
@@ -14966,7 +16693,23 @@ reached.&#x22;));
         throw error;
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _context9.next = 31;
+    break;
+
+case 24:
+    _context9.prev = 24;
+    _context9.t0 = _context9[&#x22;catch&#x22;](5);
+
+    this.<span class="apidocCodeKeywordSpan">_throwIfRecoverable</span>(_context9.t0, workflowName, methodName);
+    self._deleteWFInstance(_insta);
+    this.onInvoke(_insta, methodName, args, undefined, false, _context9.t0);
+    this.onEnd(_insta, undefined, false, _context9.t0);
+    throw _context9.t0;
+
+case 31:
+    _context9.next = 37;
+...</pre></li>
     </ul>
 
 
@@ -14983,7 +16726,23 @@ reached.&#x22;));
         throw new errors.WorkflowError(&#x22;Workflow host has been shut down.&#x22;);
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+WorkflowHost.prototype.registerDeprecatedWorkflow = function (workflow) {
+return this.registerWorkflow(workflow, true);
+};
+
+WorkflowHost.prototype.registerWorkflow = function (workflow, deprecated) {
+this.<span class="apidocCodeKeywordSpan">_verify</span>();
+var desc = this._registry.register(workflow, deprecated);
+debug(&#x22;Workflow registered. name: %s, version: %s&#x22;, desc.name, desc.version);
+return desc.version;
+};
+
+WorkflowHost.prototype._initialize = function () {
+var self = this;
+...</pre></li>
     </ul>
 
 
@@ -15004,7 +16763,23 @@ reached.&#x22;));
     spawn._promiseFulfilled(undefined);
     return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    if (self._persistence) {
+        _context9.next = 33;
+        break;
+    }
+
+    _context9.next = 4;
+    return self.<span class="apidocCodeKeywordSpan">_verifyAndRestoreInstanceState</span>(instanceId, workflowName, methodName,
+args);
+
+case 4:
+    _insta = _context9.sent;
+    _context9.prev = 5;
+    _context9.next = 8;
+    return _insta.callMethod(methodName, args);
+...</pre></li>
     </ul>
 
 
@@ -15025,7 +16800,24 @@ reached.&#x22;));
     this._trackers.push(tracker);
     this._knownRunningInstances.addTracker(tracker);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var _didIteratorError4 = false;
+var _iteratorError4 = undefined;
+
+try {
+    for (var _iterator4 = this._instances.values()[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4
+.next()).done); _iteratorNormalCompletion4 = true) {
+        var insta = _step4.value;
+
+        insta.<span class="apidocCodeKeywordSpan">addTracker</span>(tracker);
+    }
+} catch (err) {
+    _didIteratorError4 = true;
+    _iteratorError4 = err;
+} finally {
+    try {
+        if (!_iteratorNormalCompletion4 &#x26;&#x26; _iterator4.return) {
+...</pre></li>
     </ul>
 
 
@@ -15066,7 +16858,22 @@ reached.&#x22;));
         error: error
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+self = this;
+
+remove = function remove(instanceId) {
+    var knownInsta = self._knownRunningInstances.get(workflowName, instanceId);
+    if (knownInsta) {
+        debug(&#x22;Removing instance: %s&#x22;, instanceId);
+        self._deleteWFInstance(knownInsta);
+        self.<span class="apidocCodeKeywordSpan">onEnd</span>(knownInsta, undefined, true);
+    }
+};
+
+debug(&#x22;Stopping workflow &#x27;%s&#x27; with id: &#x27;%s&#x27;.&#x22;, workflowName, instanceId);
+
+_context.prev = 3;
+...</pre></li>
     </ul>
 
 
@@ -15087,7 +16894,23 @@ reached.&#x22;));
         error: error
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _result3 = _context9.sent;
+
+    if (!(_insta.execState === enums.activityStates.idle)) {
+        _context9.next = 14;
+        break;
+    }
+
+    this.<span class="apidocCodeKeywordSpan">onInvoke</span>(_insta, methodName, args, _result3, true, null);
+    return _context9.abrupt(&#x22;return&#x22;, _result3);
+
+case 14:
+    if (!(_insta.execState === enums.activityStates.complete)) {
+        _context9.next = 21;
+        break;
+    }
+...</pre></li>
     </ul>
 
 
@@ -15106,7 +16929,23 @@ reached.&#x22;));
         args: args
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _context4.next = 6;
+    return insta.create(execContext, workflowVersion, methodName, args, lockInfo);
+
+case 6:
+    _result = _context4.sent;
+
+    this._knownRunningInstances.add(workflowName, insta);
+    this.<span class="apidocCodeKeywordSpan">onStart</span>(insta, methodName, args);
+    return _context4.abrupt(&#x22;return&#x22;, _result);
+
+case 12:
+    lockInfo = {
+        id: null,
+        name: null,
+        heldTo: null
+...</pre></li>
     </ul>
 
 
@@ -15121,7 +16960,23 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">onWarn = function (error) {
     this.emit(WorkflowHost.events.warn, error);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (!this._isInitialized) {
+        if (this._options.wakeUpOptions &#x26;&#x26; this._options.wakeUpOptions.interval &#x3e; 0) {
+            this._wakeUp = new WakeUp(this._knownRunningInstances, this._persistence, this._options.wakeUpOptions);
+            this._wakeUp.on(&#x22;continue&#x22;, function (i) {
+                self._continueWokeUpInstance(i);
+            });
+            this._wakeUp.on(&#x22;error&#x22;, function (e) {
+                self.<span class="apidocCodeKeywordSpan">onWarn</span>(e);
+            });
+            this._wakeUp.start();
+        }
+
+        this._isInitialized = true;
+    }
+};
+...</pre></li>
     </ul>
 
 
@@ -15136,7 +16991,23 @@ reached.&#x22;));
     <li>description and source-code<pre class="apidocCodePre">onWorkflowEvent = function (args) {
     this.emit(WorkflowHost.events.workflowEvent, args);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}, _callee15, this, [[14, 23]]);
+}));
+
+WorkflowHost.prototype._createWFInstance = function () {
+var self = this;
+var insta = new WorkflowInstance(this);
+insta.on(enums.events.workflowEvent, function (args) {
+    self.<span class="apidocCodeKeywordSpan">onWorkflowEvent</span>(args);
+});
+return insta;
+};
+
+WorkflowHost.prototype._deleteWFInstance = function (insta) {
+insta.removeAllListeners();
+this._knownRunningInstances.remove(insta.workflowName, insta.id);
+...</pre></li>
     </ul>
 
 
@@ -15169,7 +17040,23 @@ reached.&#x22;));
     debug(&#x22;Workflow registered. name: %s, version: %s&#x22;, desc.name, desc.version);
     return desc.version;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    get: function get() {
+        return this.options.lockRenewalTimeout + Math.max(this.options.lockRenewalTimeout * 0.4, 3000);
+    }
+}
+});
+
+WorkflowHost.prototype.registerDeprecatedWorkflow = function (workflow) {
+return this.<span class="apidocCodeKeywordSpan">registerWorkflow</span>(workflow, true);
+};
+
+WorkflowHost.prototype.registerWorkflow = function (workflow, deprecated) {
+this._verify();
+var desc = this._registry.register(workflow, deprecated);
+debug(&#x22;Workflow registered. name: %s, version: %s&#x22;, desc.name, desc.version);
+return desc.version;
+...</pre></li>
     </ul>
 
 
@@ -15212,7 +17099,23 @@ reached.&#x22;));
     spawn._promiseFulfilled(undefined);
     return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            case 25:
+                _context.t2 = _context.sent;
+
+                _context.t1._setRootState.call(_context.t1, _context.t2);
+
+            case 27:
+            case &#x22;end&#x22;:
+                return _context.<span class="apidocCodeKeywordSpan">stop</span>();
+        }
+    }
+}, _callee, this, [[6, 10, 14, 22], [15,, 17, 21]]);
+}));
+
+ActivityExecutionEngine.prototype.invoke = function () {
+var self = this;
+...</pre></li>
     </ul>
 
 
